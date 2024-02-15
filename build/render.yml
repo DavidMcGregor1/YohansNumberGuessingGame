@@ -1,6 +1,0 @@
-services:
-  - name: web
-    buildCommand: python3 -m http.server 8080
-    env:
-      - key: RENDER
-        value: true

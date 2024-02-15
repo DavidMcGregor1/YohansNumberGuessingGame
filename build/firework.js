@@ -169,7 +169,7 @@ document.addEventListener("DOMContentLoaded", function () {
   document.addEventListener("outOfTries", function () {
     console.log("User ran out of tries! Refreshing the page...");
     setTimeout(() => {
-      location.reload(); // Refresh the page
-    }, 2000); // 2 seconds delay
+      location.reload();
+    }, 2000);
   });
 });
