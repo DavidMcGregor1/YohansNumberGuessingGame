@@ -7,6 +7,8 @@ import random
 def generateRandomNumber():
     return random.randint(1, 50)
 
+userChoices = []
+
 # Call this function and hold the result in the randomNumber variable
 # Declare a new variable called numberOfTriesLeft and set it to 5
 # Log out to console to double check code is working
@@ -23,8 +25,8 @@ triesOutput = document.querySelector("#tries")
 # - Check if input is equal, higher than, or less than the random number
 def handleSubmit(event):
     global numberOfTriesLeft
-    numberOfTriesLeft -=1
-    triesOutput.innerText = "Number of tries left:  {}".format(numberOfTriesLeft)
+    numberOfTriesLeft -= 1
+    triesOutput.innerText = "Number of tries left: {}".format(numberOfTriesLeft)
     print("numberOfTriesLeft -> ", numberOfTriesLeft)
     input_text = document.querySelector("#inputNumber")
     input_value = input_text.value.strip()
@@ -37,6 +39,9 @@ def handleSubmit(event):
     print("inputtedNumber -> ", inputtedNumber)
 
     output_div = document.querySelector("#output")
+    lastTryMessage = document.querySelector("#last-choice")
+    userChoices.append(inputtedNumber)  # Add the current choice to the list
+    lastTryMessage.innerText = "Your choices: {}".format(", ".join(map(str, userChoices)))  # Display all choices separated by commas
 
     if inputtedNumber == randomNumber:
         output_div.innerText = "Correct Answer!"
