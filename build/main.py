@@ -23,6 +23,7 @@ triesOutput = document.querySelector("#tries")
 # - Remove one from the number of tries
 # - Ensure input is valid
 # - Check if input is equal, higher than, or less than the random number
+# Modify the handleSubmit function to update userChoices with too high or too low indication
 def handleSubmit(event):
     global numberOfTriesLeft
     numberOfTriesLeft -= 1
@@ -40,7 +41,15 @@ def handleSubmit(event):
 
     output_div = document.querySelector("#output")
     lastTryMessage = document.querySelector("#last-choice")
-    userChoices.append(inputtedNumber)  # Add the current choice to the list
+
+    # Add the current choice with too high or too low indication to the list
+    if inputtedNumber > randomNumber:
+        userChoices.append("{} (too high)".format(inputtedNumber))
+    elif inputtedNumber < randomNumber:
+        userChoices.append("{} (too low)".format(inputtedNumber))
+    else:
+        userChoices.append("{}".format(inputtedNumber))
+
     lastTryMessage.innerText = "Your choices: {}".format(", ".join(map(str, userChoices)))  # Display all choices separated by commas
 
     if inputtedNumber == randomNumber:
