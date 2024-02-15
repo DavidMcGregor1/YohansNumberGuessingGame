@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width,initial-scale=1" />
+      <title>Yohan's Number Game</title>
+      <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.3/core.css">
+      <script type="module" src="https://pyscript.net/releases/2024.1.3/core.js"></script>
+      <script type="py" src="./main.py"></script>
+      <script src="./firework.js"></script>
+      <link rel="stylesheet" href="./style.css">
+    </head>
+  <body>
+    <main>
+        <h1>Yohan's Number Game</h1>
+    <p>Enter a number between 1-50...</p>
+    <p id="tries">Number of tries left: 5</p>
+    <input type="text" name="english" id="inputNumber" placeholder="Type number here..." />
+    <button py-click="handleSubmit">Submit number</button>
+    <div id="output"></div>
+    <canvas id="canvas"></canvas>
+
+    </main>
+  </body>
+  
+</html>
