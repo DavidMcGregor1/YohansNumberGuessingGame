@@ -11,11 +11,8 @@ userChoices = []
 
 # Call this function and hold the result in the randomNumber variable
 # Declare a new variable called numberOfTriesLeft and set it to 5
-# Log out to console to double check code is working
 randomNumber = generateRandomNumber()
 numberOfTriesLeft = 5
-print("random number -> ", randomNumber)
-print("numberOfTriesLeft -> ", numberOfTriesLeft)
 # Get the output field with the id of "tries" and assign it to triesOutput
 triesOutput = document.querySelector("#tries")
 
